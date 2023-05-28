@@ -21,7 +21,7 @@ const LoggedIn = () => {
     useEffect(() => {
         if(!loading && !authUser)
             router.push('/')
-    },[authUser, loading])
+    },[authUser, loading,router])
 
     return (
     <div className="h-screen">
@@ -33,7 +33,6 @@ const LoggedIn = () => {
         <Search />
       </div>
 
-      //Create Post form will pop-up when button clicked.
         {showForm && (() => (
           <div className="absolute w-screen h-screen bg-white bg-opacity-90 top-0 right-0 pt-40 z-50 flex justify-center items-center shadow-xl" >
               <button class="absolute top-20 right-20 p-2" onClick={closeCreatePost}>
