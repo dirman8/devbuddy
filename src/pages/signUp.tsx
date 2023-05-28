@@ -4,6 +4,7 @@ import { useAuth } from '../utils/lib/AuthUserProvider';
 import { useRouter } from 'next/router';
 
 const SignUp = () => {
+    // This component has been rename from signUp to SignUp
     const [email, setEmail] = useState("");
     const [passwordOne, setPasswordOne] = useState("");
     const [passwordTwo, setPasswordTwo] = useState("");
