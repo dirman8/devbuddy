@@ -3,7 +3,7 @@ import {Container, Row, Col, Button, Form, FormGroup, Label, Input, Alert} from 
 import { useAuth } from '../utils/lib/AuthUserProvider';
 import { useRouter } from 'next/router';
 
-const signUp = () => {
+const SignUp = () => {
     const [email, setEmail] = useState("");
     const [passwordOne, setPasswordOne] = useState("");
     const [passwordTwo, setPasswordTwo] = useState("");
@@ -86,4 +86,4 @@ const onSubmit = event => {
   )
 }
 
-export default signUp
+export default SignUp

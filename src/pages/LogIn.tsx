@@ -63,7 +63,7 @@ const onSubmit = event => {
            <FormGroup row>
             <Col className="mt-6">
               No account? 
-              <Link href="/signUp">Create one</Link>
+              <Link href="/SignUp">Create one</Link>
             </Col>
           </FormGroup>
           </Form>

@@ -23,7 +23,7 @@ export default function Home() {
             <h2 className='text-center mt-2'>A Buddy for Every Web Developer</h2>
             <div className='mt-5 flex justify-center'>
               <button className='bg-blue-300 rounded shadow-lg w-40 p-2 mr-3' type='button' onClick={() => router.push("/LogIn")} >Login</button>
-              <button className='bg-red-300 rounded shadow-lg w-40 p-2 ml-3' type='button' onClick={() => router.push("/signUp")}>Sign Up</button>
+              <button className='bg-red-300 rounded shadow-lg w-40 p-2 ml-3' type='button' onClick={() => router.push("/SignUp")}>Sign Up</button>
             </div>
           </div>
         </div>
