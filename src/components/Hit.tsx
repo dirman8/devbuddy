@@ -1,6 +1,6 @@
 import CodeCard from './CodeCard';
-import React, { useEffect, useRef } from 'react';
-import Masonry from 'masonry-layout';
+import React, { ReactNode, useEffect, useRef } from 'react';
+// import Masonry from 'masonry-layout';
 import { useHits } from 'react-instantsearch-hooks-web';
 
 const Hit = ({props}) => {
@@ -8,16 +8,23 @@ const Hit = ({props}) => {
     const gridRef = useRef(null);
     const { hits, results, sendEvent } = useHits(props);
 
-    console.log(hits);
+    console.log(hits.title);
     
   useEffect(() => {
-    if (typeof window !== 'undefined' && gridRef.current) {
-      new Masonry(gridRef.current, {
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-sizer',
-        percentPosition: true,
-        horizontalOrder: true,
-      });
+    if (typeof window!=='undefined' && gridRef.current) {
+      async function masonryLayout() {
+        try {
+          const {Masonry} = await import('masonry-layout');
+            new Masonry(gridRef.current, {
+              itemSelector: '.grid-item',
+              columnWidth: '.grid-sizer',
+              percentPosition: true,
+              horizontalOrder: true,
+            });
+        }catch (error) {
+          // Handle any errors that occurred during the import
+        }
+      }
     }
   }, []);
 
