@@ -8,8 +8,6 @@ const Hit = ({props}) => {
     const gridRef = useRef(null);
     const { hits, results, sendEvent } = useHits(props);
 
-    console.log(hits.title);
-    
   useEffect(() => {
     if (typeof window!=='undefined' && gridRef.current) {
       async function masonryLayout() {
