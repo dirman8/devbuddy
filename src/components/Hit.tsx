@@ -33,7 +33,7 @@ const Hit = ({props}) => {
         <div className='grid-sizer sm:w-6/12'></div>
           {hits.map((hit)=>(
             <div key={hit.objectID} className='grid-item sm:w-6/12 p-2 '>
-              <h1 className='text-white text-center p-4 bg-indigo-950 rounded-t-md'>{hit.title}</h1>
+              <h1 className='text-white text-center p-4 bg-indigo-950 rounded-t-md'>{hit.title as ReactNode}</h1>
               <CodeCard code={hit.content} language={language}/>
             </div>
           ))}
