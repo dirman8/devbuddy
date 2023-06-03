@@ -10,7 +10,7 @@ const Hit = ({props}) => {
 
   useEffect(() => {
     if (typeof window!=='undefined' && gridRef.current) {
-      async function masonryLayout() {
+      const masonryLayout = async () {
         try {
           const {Masonry} = await import('masonry-layout');
             new Masonry(gridRef.current, {
@@ -23,6 +23,8 @@ const Hit = ({props}) => {
           // Handle any errors that occurred during the import
         }
       }
+
+      masonryLayout();
     }
   }, []);
 
