@@ -35,7 +35,7 @@ const LoggedIn = () => {
 
         {showForm && (() => (
           <div className="absolute w-screen h-screen bg-white bg-opacity-90 top-0 right-0 pt-40 z-50 flex justify-center items-center shadow-xl" >
-              <button class="absolute top-20 right-20 p-2" onClick={closeCreatePost}>
+              <button className="absolute top-20 right-20 p-2" onClick={closeCreatePost}>
                 <svg viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6">
                   <path fill-rule="evenodd" d="M12.7 10l6.65-6.65a1 1 0 1 0-1.42-1.42L11.3 8.58 4.65 1.93a1 1 0 0 0-1.42 1.42L8.88 10l-6.65 6.65a1 1 0 0 0 1.42 1.42L10 11.42l6.65 6.65a1 1 0 0 0 1.42-1.42L12.7 10z" clip-rule="evenodd"></path>
                 </svg>
