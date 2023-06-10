@@ -9,7 +9,8 @@ const Search = () => {
     const algoliaIndex = algoliaClient.initIndex('member-search');
 
     const handleSearchStateChange = (newSearchState) => {
-        setSearchState(newSearchState)
+        // setSearchState(newSearchState)
+        console.log(newSearchState);
     };
 
     const handleSearchSubmit = (event) => {
