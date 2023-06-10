@@ -4,7 +4,7 @@ import useFirebaseAuth from "./useFirebaseAuth";
 const authUserContext = createContext({
     authUser: null,
     loading: true,
-    signInWithEmailAndPassword: async () => {},
+    signInWithEmailAndPassword: async (email, password) => {},
     createUserWithEmailAndPassword: async () => {},
     signOut: async () => {}
 });
