@@ -24,8 +24,7 @@ const Search = () => {
         <InstantSearch
         indexName="member-search"
         searchClient={algoliaClient}
-        // searchState={searchState}
-        onSearchStateChange={handleSearchStateChange}
+        onStateChange={handleSearchStateChange}
         >
             <div className='flex mt-10'>
                 <div className='w-15 bg-gray-100 p-4 hidden md:block' >
