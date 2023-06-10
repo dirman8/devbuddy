@@ -24,7 +24,7 @@ const onSubmit = event => {
         });
 
     else
-        setDefaultResultOrder("Password do not match")
+        console.log("Password do not match")
     
     event.preventDefault();
 }
