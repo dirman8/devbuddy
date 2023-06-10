@@ -9,8 +9,7 @@ const Search = () => {
     const algoliaIndex = algoliaClient.initIndex('member-search');
 
     const handleSearchStateChange = (newSearchState) => {
-        // setSearchState(newSearchState)
-        console.log(newSearchState);
+        setSearchState(newSearchState)
     };
 
     const handleSearchSubmit = (event) => {
@@ -25,7 +24,7 @@ const Search = () => {
         <InstantSearch
         indexName="member-search"
         searchClient={algoliaClient}
-        searchState={searchState}
+        // searchState={searchState}
         onSearchStateChange={handleSearchStateChange}
         >
             <div className='flex mt-10'>
