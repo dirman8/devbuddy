@@ -3,10 +3,10 @@ import React, { ReactNode, useEffect, useRef } from 'react';
 // import Masonry from 'masonry-layout';
 import { useHits } from 'react-instantsearch-hooks-web';
 
-const Hit = ({props}) => {
+const Hit = () => {
     const language = 'javascript';
     const gridRef = useRef(null);
-    const { hits, results, sendEvent } = useHits(props);
+    const { hits, results, sendEvent } = useHits();
 
   useEffect(() => {
     if (typeof window!=='undefined' && gridRef.current) {
