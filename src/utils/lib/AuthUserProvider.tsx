@@ -2,14 +2,26 @@ import { createContext, useContext } from "react"
 import useFirebaseAuth from "./useFirebaseAuth";
 import firebase from "../db/firebaseConfig";
 
-const authUserContext = createContext({
+interface AuthUserContextType {
+  authUser: firebase.User | null;
+  loading: boolean;
+  signInWithEmailAndPassword: (email: string, password: string) => Promise<firebase.auth.UserCredential>;
+  createUserWithEmailAndPassword: (email: string, password: string) => Promise<firebase.auth.UserCredential>;
+  signOut: () => Promise<void>;
+}
+
+const authUserContext = createContext<AuthUserContextType>({
     authUser: null,
     loading: true,
-    signInWithEmailAndPassword: async (email: string, password: string) => Promise<firebase.auth.UserCredential>,
-    // (email, password) => {},
-    createUserWithEmailAndPassword: async (email: string, password: string) => Promise<firebase.auth.UserCredential>,
-    // (email, passwordOne) => {},
-    signOut: async () => {}
+    signInWithEmailAndPassword: async (email, password) => {
+    throw new Error("signInWithEmailAndPassword not implemented");
+  },
+  createUserWithEmailAndPassword: async (email, password) => {
+    throw new Error("createUserWithEmailAndPassword not implemented");
+  },
+  signOut: async () => {
+    throw new Error("signOut not implemented");
+  },
 });
 
 function AuthUserProvider({children}) {
