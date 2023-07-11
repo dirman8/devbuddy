@@ -31,6 +31,10 @@ export default function useFirebaseAuth() {
     const createUserWithEmailAndPassword = (email, password) => firebase.auth().createUserWithEmailAndPassword(email, password);
     const signInWithEmailAndPassword = (email, password) => firebase.auth().signInWithEmailAndPassword(email, password);
     const signOut = () => firebase.auth().signOut().then(clear);
+    const createUsersCollection = () => firebase.firestore().collection('users').doc(authUser.uid).set({
+        email: authUser.email,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+    });
 
     //listen for Firebase state change
     useEffect(() => {
@@ -43,6 +47,7 @@ export default function useFirebaseAuth() {
         loading,
         createUserWithEmailAndPassword,
         signInWithEmailAndPassword,
-        signOut
+        signOut,
+        createUsersCollection
     }
     }

@@ -8,6 +8,7 @@ interface AuthUserContextType {
   signInWithEmailAndPassword: (email: string, password: string) => Promise<firebase.auth.UserCredential>;
   createUserWithEmailAndPassword: (email: string, password: string) => Promise<firebase.auth.UserCredential>;
   signOut: () => Promise<void>;
+  createUsersCollection: () => Promise<void>;
 }
 
 const authUserContext = createContext<AuthUserContextType>({
@@ -21,6 +22,9 @@ const authUserContext = createContext<AuthUserContextType>({
   },
   signOut: async () => {
     throw new Error("signOut not implemented");
+  },
+  createUsersCollection: async () => {
+  throw new Error("createUsersCollection not implemented");
   },
 });
 
@@ -36,4 +40,3 @@ function AuthUserProvider({children}) {
 export const useAuth = () => useContext(authUserContext);
 
 export default AuthUserProvider
-

@@ -21,6 +21,7 @@ const LoggedIn = () => {
     useEffect(() => {
         if(!loading && !authUser)
             router.push('/')
+        console.log("authUser :" , authUser)
     },[authUser, loading,router])
 
     return (
@@ -30,7 +31,7 @@ const LoggedIn = () => {
           <button onClick={signOut} className='bg-blue-300 rounded shadow-lg w-40 p-2 mx-3'>Sign out</button>
           <button onClick={showCreatePost}>Create Post</button>
         </div>
-        <Search />
+        {authUser && <Search authUser={authUser}/>}
       </div>
 
         {showForm && (() => (
@@ -41,7 +42,7 @@ const LoggedIn = () => {
                 </svg>
               </button>
               <CreatePost />
-            </div>
+          </div>
           ))()
         }
       {/* </div> */}

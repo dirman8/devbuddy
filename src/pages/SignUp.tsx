@@ -10,22 +10,34 @@ const SignUp = () => {
     const [passwordTwo, setPasswordTwo] = useState("");
     const [error, setError] = useState(null);
 
-    const { createUserWithEmailAndPassword } = useAuth();
+    const { createUserWithEmailAndPassword, createUsersCollection } = useAuth();
     const router = useRouter();
 
 const onSubmit = event => {
-    if(passwordOne === passwordTwo)
-        createUserWithEmailAndPassword (email, passwordOne).then(authUser => {
-            console.log("Success. The user is created in Firebase", authUser)
-            router.push('./WelcomeMember')
-        })
-        .catch(error => {
-            setError(error.message)
-        });
+    console.log("On Submit")
+    if (passwordOne === passwordTwo) {
+        console.log("password same");
+        
+        const createUserAndCollection = async (email: string, password: string) => {
+            console.log("password correct");
+            try {
+            await createUserWithEmailAndPassword(email, password);
+            await createUsersCollection();
+            console.log("Success. The user is created in Firebase");
+            router.push('./WelcomeMember');
+            } catch(error) {
+            setError(error.message);
+            }
+        };
 
-    else
+        // Call the async function
+        createUserAndCollection(email, passwordOne);
+    }
+
+    else {
         console.log("Password do not match")
-    
+    }
+
     event.preventDefault();
 }
 
@@ -36,39 +48,39 @@ const onSubmit = event => {
                 <Form onSubmit={onSubmit}>
                     {error && <Alert color="danger">{error}</Alert>}
                     <FormGroup row className='mb-4'>
-                        <Label for="signUpEmail sm={4}">Email</Label>
+                        <Label for="signUpEmail">Email</Label>
                         <Col sm={8}>
                             <Input 
                             type='email'
                             value={email}
                             onChange={(event) => setEmail(event.target.value)}
-                            name='email'
+                            name='signUpEmail'
                             id='signUpEmail'
                             placeholder='Email'
                             />
                         </Col>
                     </FormGroup>
                     <FormGroup row className='mb-4'>
-                        <Label for="signUpPassword sm={4}">Password</Label>
+                        <Label for="signUpPassword">Password</Label>
                         <Col sm={8}>
                             <Input 
                             type='password'
                             value={passwordOne}
                             onChange={(event) => setPasswordOne(event.target.value)}
-                            name='passwordOne'
+                            name='signUpPassword'
                             id='signUpPassword'
                             placeholder='Password'
                             />
                         </Col>
                     </FormGroup>
                      <FormGroup row className='mb-4'>
-                        <Label for="signUpPassword2 sm={4}">Confirm Password</Label>
+                        <Label for="signUpPassword2">Confirm Password</Label>
                         <Col sm={8}>
                             <Input 
                             type='password'
                             value={passwordTwo}
                             onChange={(event) => setPasswordTwo(event.target.value)}
-                            name='passwordTwo'
+                            name='signUpPassword2'
                             id='signUpPassword2'
                             placeholder='Password'
                             />

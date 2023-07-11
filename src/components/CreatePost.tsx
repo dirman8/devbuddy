@@ -15,14 +15,14 @@ const CreatePost = () => {
 
     async function handleSubmit(event) {
         console.log("form has been submitted");
-        console.log("auth User :", authUser.uid);
 
         event.preventDefault();
-        const postRef = await db.collection("users").doc();
+        const postRef = await db.collection("users/${uid}/code").doc();
         console.log("post ref :", postRef)
 
         // Send the form data to Algolia
         const record = {
+            User: authUser.uid,
             objectID:  postRef.id,
             title: title,
             content: content,
@@ -33,6 +33,7 @@ const CreatePost = () => {
 
         // Send the form data (post) to Firestore
         postRef.set({
+            User: authUser.uid,
             postId: postRef.id,
             title,
             content,
