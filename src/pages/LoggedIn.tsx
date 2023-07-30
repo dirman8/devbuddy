@@ -27,9 +27,9 @@ const LoggedIn = () => {
     return (
     <div className="h-screen">
       <div>
-        <div className="flex justify-between mt-3">
+        <div className="flex justify-between mt-6 px-10">
           <button onClick={signOut} className='bg-blue-300 rounded shadow-lg w-40 p-2 mx-3'>Sign out</button>
-          <button onClick={showCreatePost}>Create Post</button>
+          <button onClick={showCreatePost} className='bg-red-300 rounded shadow-lg w-40 p-2 mx-3'>Create Post</button>
         </div>
         {authUser && <Search authUser={authUser}/>}
       </div>

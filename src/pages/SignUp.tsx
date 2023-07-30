@@ -88,7 +88,7 @@ const onSubmit = event => {
                     </FormGroup>
                     <FormGroup>
                         <Col className='text-center'>
-                            <Button type='submit' className='bg-blue-300 rounded shadow-lg w-40 p-2 mr-3'>Sign Up</Button>
+                            <Button type='submit' className='bg-blue-300 rounded shadow-lg w-40 p-2 mr-3 my-3'>Sign Up</Button>
                         </Col>
                     </FormGroup>
                 </Form>

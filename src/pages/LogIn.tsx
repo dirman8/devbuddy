@@ -43,6 +43,7 @@ const onSubmit = event => {
                   placeholder="Email" />
               </Col>
             </FormGroup>
+            <div className="h-4"></div>
             <FormGroup row>
               <Label for="loginPassword" sm={4}>Password</Label>
               <Col sm={8}>
@@ -55,15 +56,16 @@ const onSubmit = event => {
                   placeholder="Password" />
               </Col>
             </FormGroup>
+            <div className="h-4"></div>
             <FormGroup row>
              <Col className="text-center">
-               <Button type="submit" >Login</Button>
+               <Button type="submit" className="text-blue-600">Login</Button>
              </Col>
            </FormGroup>
            <FormGroup row>
             <Col className="mt-6">
-              No account? 
-              <Link href="/SignUp">Create one</Link>
+              <p className="text-center">Not have an account?</p> 
+              <Link href="/SignUp"><p className="text-blue-600 w-full text-center">Create one</p></Link>
             </Col>
           </FormGroup>
           </Form>

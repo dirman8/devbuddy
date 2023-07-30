@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form"
 import CreateUserView from "./CreateUserView"
 import { yupResolver } from "@hookform/resolvers/yup";
 // import * as yup from "yup";
-
 const yup = require("yup");
 
 const CreateUserLogic = ({defaultValues, onSubmit}) => {
