@@ -9,12 +9,6 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
         <AuthUserProvider>
-            <Head>
-              <title>Dev Buddy</title>
-              <meta name="description" content="A Web Developer Buddy " />
-              <meta name="viewport" content="width=device-width, initial-scale=1" />
-              <link rel="icon" href="/db.ico"/>
-            </Head> 
             <Component {...pageProps} />
         </AuthUserProvider>
     </QueryClientProvider>

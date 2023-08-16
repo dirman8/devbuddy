@@ -3,11 +3,18 @@ import Image from 'next/image'
 import { useRouter } from "next/router";
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
+import Head from 'next/head';
 export default function Home() {
   const router = useRouter();
 
   return (
     <>
+        <Head>
+            <title>Dev Buddy</title>
+            <meta name="description" content="A Web Developer Buddy " />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="icon" href="/db.ico"/>
+      </Head> 
       <main className={styles.main}>
         <div className='h-screen flex justify-center'>
           <div className='mt-56'>
