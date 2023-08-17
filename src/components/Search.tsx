@@ -26,7 +26,8 @@ const Search = ({authUser}) => {
             <div className='flex mt-6'>
                 <div className='w-15 bg-gray-100 p-4 hidden md:block' >
                     <SearchBox 
-                        translations={{placeholder: 'Search here ...'}}
+                    // placeholder:"Search here"
+                    // translations={{placeholder: 'Search here ...'} as Partial<SearchBoxTranslations>}
                         submitIconComponent={()=>(
                             <FeatherSearchIcon className='mt-3' size={20}/>
                     )}
