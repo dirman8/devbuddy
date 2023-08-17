@@ -34,6 +34,7 @@ const LoggedIn = () => {
         {authUser && <Search authUser={authUser}/>}
       </div>
 
+        //Show Create Post when "Create Post" button clicked 
         {showForm && (() => (
           <div className="absolute w-screen h-screen bg-white bg-opacity-90 top-0 right-0 pt-40 z-50 flex justify-center items-center shadow-xl" >
               <button className="absolute top-20 right-20 p-2" onClick={closeCreatePost}>
