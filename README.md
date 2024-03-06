@@ -1,38 +1,147 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h2 align="center">Dev Buddy - Snippet Collector</h2>
 
-## Getting Started
+<p align="center">
+<a href="https://github.com/clintonwoo/hackernews-react-graphql/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/clintonwoo/hackernews-react-graphql.svg?style=social&label=Star"></a> 
+<a href="https://github.com/clintonwoo/"><img alt="GitHub Followers" src="https://img.shields.io/github/followers/clintonwoo.svg?style=social&label=Follow"></a> 
+<a href="https://github.com/clintonwoo/hackernews-react-graphql/issues"><img alt="GitHub Issues" src="https://img.shields.io/github/issues/clintonwoo/hackernews-react-graphql.svg"></a> 
+<a href="https://github.com/clintonwoo/hackernews-react-graphql/pulls"><img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr-raw/clintonwoo/hackernews-react-graphql.svg"></a>
+</p>
 
-First, run the development server:
+This project is a clone of hacker news rewritten with universal JavaScript, using React and GraphQL. It is intended to be an example or boilerplate to help you structure your projects using production-ready technologies.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<p align="center" margin-bottom="0">
+  <a href="http://www.hnclone.win" target="_blank">
+    <img alt="Hacker News Clone Demo" width="auto" height="auto" src="docs/HN-Demo.jpg">
+  </a>
+</p>
+<p align="center">
+  <a href="http://www.hnclone.win">Live Demo</a>
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Overview
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Featuring
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- React - (UI Framework)
+- GraphQL - (Web Data API)
+- Apollo - (GraphQL Client/Server)
+- Next - (Routing, SSR, Hot Module Reloading, Code Splitting, Build tool uses Webpack)
+- TypeScript - (Static Types)
+- Webpack - (Module Bundler)
+- PostCSS - (CSS Processing)
+- Node.js - (Web Server)
+- Express - (Web App Server)
+- Passport - (Authentication)
+- ESLint - (Coding Best Practices/Code Highlighting)
+- Jest - (Tests)
+- Docker - (Container Deployment)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Optional - Yarn or Pnpm Package Manager - (Better Dependencies)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Benefits
 
-## Learn More
+**Front End**
 
-To learn more about Next.js, take a look at the following resources:
+- Declarative UI - (`react`)
+- Static Typing (`typescript`)
+- GraphQL Fragment Colocation - (`@apollo/client`)
+- Prefetch Page Assets - (`next`)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Server**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Universal JS - (`node` & `express`)
+- Declarative GraphQL Schema - (`apollo-server`)
+- GraphQL Query Batching - (`apollo-server-express`)
+- GraphQL Stored Queries - (`apollo-server-express`)
+- Easy GraphiQL Include - (`apollo-server-express`)
+- Local Authentication Strategy - (`passport`)
+- Server Side Rendering - (`next`)
+- Code Splitting - (`next`)
+- Build to Static Website - (`next`)
+- Container Based Runtime - (`docker`)
 
-## Deploy on Vercel
+**Dev/Test**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Hot Module Reloading - (`next`)
+- Snapshot Testing - (`jest`)
+- GraphQL Playground - (`apollo-server-express`)
+- Faster Package Install - (`pnpm`/`yarn`)
+- JS/TS Best Practices - (`eslint`)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Architecture Overview
+
+<p align="center">
+  <img alt="Hacker News Clone Architecture Overview" width="auto" height="400px" src="docs/HN-Clone-Architecture-overview.png">
+</p>
+
+`server.ts` is the entry point. It uses Express and passes requests to Next. Next SSR renders the pages using `getServerSideProps()` hook from Apollo helper. Therefore the app makes GraphQL requests on the client or server.
+
+When the client loads the page it preloads next pages code from any `<Link href="/">`. When the client navigates to the next page it only needs to make one GraphQL query to render. _Great!_
+
+See more: <a href="https://github.com/zeit/next.js/">Next.js</a>,
+<a href="http://dev.apollodata.com/react/">Apollo GraphQL Client</a>
+
+GraphQL: <a href="http://dev.apollodata.com/tools/graphql-tools/index.html">GraphQL-Tools by Apollo</a>
+or
+<a href="http://graphql.org/graphql-js/">GraphQL docs</a>
+
+### Directory Structure
+
+Each web page has a React component in `pages`. Server code is in `server`. Shared code that runs on client or server is in `src`. Do not import from `server` or `pages` in `src` to avoid running code in the wrong environment.
+
+The project root contains config files such as TypeScript, Babel, ESLint, Docker, Flow, NPM, Yarn, Git.
+
+## How To Start
+
+### One Click Download & Run
+
+You can download and run the repo with one command to rule them all:
+
+`git clone https://github.com/clintonwoo/hackernews-react-graphql.git && cd hackernews-react-graphql && npm install && npm start`
+
+### Setup
+
+Running the app in dev mode is fully featured including _hot module reloading_:
+
+`npm install`
+
+`npm start`
+
+To run in production mode:
+
+`npm run build:prod && npm run start:prod`
+
+### Configuration
+
+The project runs out of the box with default settings (`/src/config.ts`). You can include a .env file in your project root to configure settings (this is the '_dotenv_' npm package). The _.env_ file is included in _.gitignore_.
+
+## How To Test
+
+### Jest
+
+`npm test`
+
+This project uses Jest and can do snapshot testing of React components. Whenever a component is changed, please update the snapshots using `npm test -- -u` or `npx jest --updateSnapshot`.
+
+## How To Build For Deployment
+
+`npm run build:prod`: NextJS app with entry point `server.ts` that uses Node.js/Express. Uses TypeScript compiler to transpile project src to build.
+
+OR
+
+`npm run build-docker`
+Docker Container: Builds a docker container using Dockerfile.
+
+#### Static Website (Optional)
+
+NextJS lets us make a powerful static website but you need to consider if you need server side rendering.
+
+`npm run build-static-website`: Builds static website to `/build/static`. Use a static web server _eg._ NGINX/Github Pages.
+
+## Contributing
+
+Pull requests are welcome. File an issue for ideas, conversation or feedback.
+
+### Community
+
+After you ★Star this project, follow [@ClintonDAnnolfo](https://twitter.com/clintondannolfo) on Twitter.
