@@ -7,7 +7,7 @@
 <a href="https://github.com/clintonwoo/hackernews-react-graphql/pulls"><img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr-raw/clintonwoo/hackernews-react-graphql.svg"></a>
 </p>
 
-This project is a clone of hacker news rewritten with universal JavaScript, using React and GraphQL. It is intended to be an example or boilerplate to help you structure your projects using production-ready technologies.
+This project is a Web App to help developer collect and search their most used Snippets. This app using NextJS Framework for Front End and Firebase Services for Back End. It is intended to help developer to find their snippet while coding.
 
 <p align="center" margin-bottom="0">
   <a href="http://www.hnclone.win" target="_blank">
@@ -22,21 +22,13 @@ This project is a clone of hacker news rewritten with universal JavaScript, usin
 
 ### Featuring
 
-- React - (UI Framework)
-- GraphQL - (Web Data API)
-- Apollo - (GraphQL Client/Server)
-- Next - (Routing, SSR, Hot Module Reloading, Code Splitting, Build tool uses Webpack)
+- Next.JS - (UI Framework)
 - TypeScript - (Static Types)
 - Webpack - (Module Bundler)
 - PostCSS - (CSS Processing)
-- Node.js - (Web Server)
-- Express - (Web App Server)
-- Passport - (Authentication)
+- Firebase Auth - (Authentication)
 - ESLint - (Coding Best Practices/Code Highlighting)
 - Jest - (Tests)
-- Docker - (Container Deployment)
-
-- Optional - Yarn or Pnpm Package Manager - (Better Dependencies)
 
 ### Benefits
 
@@ -44,28 +36,17 @@ This project is a clone of hacker news rewritten with universal JavaScript, usin
 
 - Declarative UI - (`react`)
 - Static Typing (`typescript`)
-- GraphQL Fragment Colocation - (`@apollo/client`)
 - Prefetch Page Assets - (`next`)
 
 **Server**
-
-- Universal JS - (`node` & `express`)
-- Declarative GraphQL Schema - (`apollo-server`)
-- GraphQL Query Batching - (`apollo-server-express`)
-- GraphQL Stored Queries - (`apollo-server-express`)
-- Easy GraphiQL Include - (`apollo-server-express`)
-- Local Authentication Strategy - (`passport`)
 - Server Side Rendering - (`next`)
 - Code Splitting - (`next`)
 - Build to Static Website - (`next`)
-- Container Based Runtime - (`docker`)
 
 **Dev/Test**
 
 - Hot Module Reloading - (`next`)
 - Snapshot Testing - (`jest`)
-- GraphQL Playground - (`apollo-server-express`)
-- Faster Package Install - (`pnpm`/`yarn`)
 - JS/TS Best Practices - (`eslint`)
 
 ### Architecture Overview
