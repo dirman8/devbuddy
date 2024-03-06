@@ -1,4 +1,4 @@
-<h2 align="center">Dev Buddy - Snippet Collector</h2>
+<h2 align="center">Dev Buddy - Snippets Collector</h2>
 
 <p align="center">
 <a href="https://github.com/clintonwoo/hackernews-react-graphql/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/clintonwoo/hackernews-react-graphql.svg?style=social&label=Star"></a> 
